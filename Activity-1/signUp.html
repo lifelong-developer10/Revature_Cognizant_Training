@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    body {
+      background-image: url("https://static.vecteezy.com/system/resources/thumbnails/017/673/689/small/blurred-gradient-background-vector.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    div {
+      margin-left: 30%;
+      margin-top: 10%;
+      height: 340px;
+      width: 500px;
+
+      align-items: center;
+      padding: 5px;
+      background-image: linear-gradient(to top, rgb(218, 153, 255), rgb(81, 118, 240));
+      border: 2px solid rgb(255, 255, 255);
+      border-radius: 6px;
+
+    }
+
+    button {
+      padding-left: 12%;
+      padding-right: 12%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      border: 2px solid black;
+      margin: 2%;
+      font-size: larger;
+      font-weight: bolder;
+      background-color: rgb(37, 16, 87);
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      border-radius: 4px;
+      color: white;
+
+
+    }
+
+    label {
+      color: rgb(41, 2, 38);
+      font-weight: bolder;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+
+    .label-icon {
+      display: flex;
+      align-items: center;
+
+    }
+
+    svg {
+      vertical-align: middle;
+    }
+
+    h4 {
+      color: rgb(255, 255, 255);
+      font-weight: bolder;
+      padding: 0%;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: x-large;
+    }
+
+    input {
+      padding: 8px;
+      border-radius: 4px;
+      width: 250px;
+    }
+
+    tr {
+      padding-bottom: 1%;
+    }
+  </style>
+  <script>
+    function signIn(event) {
+      event.preventDefault();
+      const fname = document.getElementById("fname").value;
+      const lname = document.getElementById("lname").value;
+      const contact = document.getElementById("contact").value;
+      const mailId = document.getElementById("mail").value;
+
+      if (fname && lname && contact && mailId) {
+        localStorage.setItem("FirstName", fname);
+        localStorage.setItem("LastName", lname);
+        localStorage.setItem("PhoneNo", contact);
+        localStorage.setItem("Email", mailId);
+
+        alert("Registration Successful!");
+
+        window.location.href = "index.html";
+
+      }
+      else {
+        alert("Insert All the required fields");
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <center>
+      <form onsubmit="signIn(event)">
+
+        <h4> Sign Up <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+            class="bi bi-pencil-square" viewBox="0 0 16 16">
+            <path
+              d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+            <path fill-rule="evenodd"
+              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+          </svg></h4>
+        <hr><br>
+        <table>
+          <tr>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor"
+                class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+              </svg> <label>First Name:</label></td>
+            <td><input type="text" placeholder="write your first name" id="fname"></td>
+          </tr>
+
+
+          <tr>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor"
+                class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+              </svg> <label>Last Name:</label></td>
+            <td><input type="text" placeholder="write your last name" id="lname"></td>
+          </tr>
+
+          <tr>
+            <td> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-telephone-forward-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zm10.761.135a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708" />
+              </svg><label> Phone No:</label></td>
+            <td><input type="tel" placeholder="Does not add +91" id="contact"></td>
+          </tr>
+
+          <tr>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor"
+                class="bi bi-envelope-check-fill" viewBox="0 0 16 16">
+                <path
+                  d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 4.697v4.974A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-1.965.45l-.338-.207z" />
+                <path
+                  d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686" />
+              </svg><label> Email:</label></td>
+            <td><input type="email" placeholder="add your valid email" id="mail">
+        </table>
+        </td>
+        </tr>
+
+        <button type="submit">SignUp</button>
+      </form>
+    </center>
+  </div>
+</body>
+
+</html>
