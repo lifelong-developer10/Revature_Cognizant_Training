@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, #80f163, #32f74c); 
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -7,91 +7,381 @@ body {
     border-radius: 15px;
 }
 
+#questionSidebar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
 #questionSidebar button {
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-weight: bold;
     border: none;
-    transition: 0.2s;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#questionSidebar button.notAttempted {
+    background-color: #d3d3d3;
+    color: #333;
 }
 
 #questionSidebar button.current {
-    background-color: #ff9800;
+    background-color: #1e90ff;
     color: white;
 }
 
-#questionSidebar button.answered {
-    background-color: #0d569b;
+#questionSidebar button.attempted {
+    background-color: #28a745;
     color: white;
 }
 
-#questionSidebar button.unanswered {
-    background-color: #9af19e;
-    color: rgb(0, 0, 0);
-    border: 1px solid black;
+#quizQuestion {
+    min-height: 150px;
 }
 
-#questionSidebar button:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.option-btn {
-    width: 100%;
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
-    transition: 0.2s;
-    background-color: #0c4207;
-    color: #fff;
-}
-
-.question-sidebar-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* ✅ 3 questions per row */
-    gap: 10px;
+.quiz-option {
+    display: block;
+    background-color: #ffffff;
+    border-radius: 10px;
     padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #d1d1d1;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
+.quiz-option:hover {
+    background-color: #e0f7fa;
+    transform: scale(1.02);
+}
 
-/* Question buttons */
+#meritBar {
+    transition: width 0.5s ease-in-out;
+}
+
+#submitBtn {
+    background: linear-gradient(90deg, #43cea2, #185a9d);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s;
+}
+
+#submitBtn:hover {
+    background: linear-gradient(90deg, #185a9d, #43cea2);
+}
+
+/* Final Congratulations Page */
+.congrats-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: popIn 1s ease-out;
+}
+
+.congrats-card h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.congrats-card p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ===== Body & Fonts ===== */
+body {
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+/* ===== Quiz Card ===== */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}/* ===== Question Grid ===== *//* Grid layout: 3 tiles per row */
+.question-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Question tiles */
 #questionSidebar button {
-    height: 45px;
-    border-radius: 6px;
+    height: 60px;
+    border-radius: 12px;
     border: none;
     font-weight: bold;
     cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    position: relative;
 }
 
-/* States */
+/* Hover effect */
+#questionSidebar button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+}
+
+/* Color states */
 #questionSidebar button.unanswered {
     background-color: #e0e0e0;
+    color: #555;
 }
-
+#questionSidebar button.visited {
+    background-color: #ffb74d;
+    color: white;
+}
 #questionSidebar button.answered {
     background-color: #4caf50;
     color: white;
 }
+#questionSidebar button.current {
+    background: linear-gradient(90deg, #ff9800, #ffb74d);
+    color: white;
+    box-shadow: 0 0 12px rgba(255,165,0,0.8);
+}
+
+/* Optional: tooltip for question preview */
+#questionSidebar button:hover::after {
+    content: attr(data-question);
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0.9;
+}
+
+/* Legend */
+.sidebar-legend span {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 5px 5px 0 0;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+}
+.legend-current { background: linear-gradient(90deg, #ff9800, #ffb74d); }
+.legend-answered { background-color: #4caf50; }
+.legend-unanswered { background-color: #615c5c; color: #000000; }
+.legend-visited { background-color: #ffb74d; }
+
+
+/* ===== Question Card ===== */
+#questionSidebar button {
+    height: 50px;
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#questionSidebar button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== Color States ===== */
+#questionSidebar button.unanswered {
+    background-color: #070606;
+    color: #555;
+}
+
+#questionSidebar button.visited {
+    background-color: #ffb74d;
+    color: #fff;
+}
+
+#questionSidebar button.answered {
+    background-color: #4caf50;
+    color: #fff;
+}
 
 #questionSidebar button.current {
-    background-color: #ff9800;
+    background: linear-gradient(90deg, #ff9800, #ffb74d);
+    color: #fff;
+    box-shadow: 0 0 12px rgba(255,165,0,0.8);
+}
+
+/* ===== Legend ===== */
+.sidebar-legend span {
+    display: inline-block;
+    padding: 5px 12px;
+    margin: 5px 5px 0 0;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+}
+.legend-current { background: linear-gradient(90deg, #ff9800, #ffb74d); }
+.legend-answered { background-color: #4caf50; }
+.legend-unanswered { background-color: #615d5d; color: #000000; }
+.legend-visited { background-color: #ffb74d; }
+
+
+/* Question Buttons */
+#questionSidebar button {
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* States */
+#questionSidebar button.unanswered {
+    background-color: #8b8a8a; /* gray */
+    color: #000000;
+}
+
+#questionSidebar button.visited {
+    background-color: #ffb74d; /* orange */
     color: white;
 }
 
+#questionSidebar button.answered {
+    background-color: #4caf50; /* green */
+    color: white;
+}
+
+#questionSidebar button.current {
+    background: linear-gradient(90deg, #ff9800, #ffb74d); /* gradient for current */
+    color: white;
+    box-shadow: 0 0 8px rgba(255,165,0,0.7);
+}
+
+#questionSidebar button:hover {
+    transform: scale(1.1);
+}
+
+
+/* ===== Option Buttons ===== */
+.option-btn {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    transition: all 0.3s;
+    background: linear-gradient(90deg, #0c4207, #1e7d0f);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
 .option-btn:hover {
-    background-color: #42a5f5;
-    cursor: pointer;
+    background: linear-gradient(90deg, #42a5f5, #1e88e5);
+    transform: scale(1.02);
 }
 
 .option-btn.selected {
-    background-color: #1e88e5;
+    background: linear-gradient(90deg, #ff9800, #f57c00);
+    color: white;
 }
 
+/* ===== Progress Bar ===== */
 .progress {
     height: 20px;
     border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+.progress-bar {
+    transition: width 0.5s ease-in-out;
+}
+
+/* ===== Submit Button ===== */
+#submitBtn {
+    border-radius: 10px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #43cea2, #185a9d);
+    color: white;
+    border: none;
+    transition: all 0.3s;
+}
+
+#submitBtn:hover {
+    background: linear-gradient(90deg, #185a9d, #43cea2);
+    transform: scale(1.05);
+}
+
+/* ===== Final Congratulations Card ===== */
+.congrats-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: popIn 1s ease-out;
+}
+
+.congrats-card h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.congrats-card p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ===== Confetti Animation (Optional) ===== */
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fdd835;
+    opacity: 0.8;
+    animation: confettiFall 3s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(700px) rotate(360deg); opacity: 0; }
+}
