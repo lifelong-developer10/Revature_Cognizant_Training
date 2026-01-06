@@ -9,25 +9,50 @@
 
     <h1>Javascript Exercise</h1>
     <br>
-    
+    <h5>Excersize 1:</h5>
     <button type="submit" onclick="startfunc()">Start</button>
     <br>
+     <h5>Excersize 2:</h5>
+    <div id="adContainer">
+     <h5>the loaded add is here:</h5>
+</div>
+    <br>
+     <h5>Excersize 9:</h5>
     <h3>GST Calculation:</h3>
     <button type="submit" onclick="calculateGST(3)">Calculate GST</button>
     <br>
     <br>
+     <h5>Excersize 14:</h5>
     <label>Name:</label>
     <input type="text" placeholder="add the name"  id="names">
     <br>
     <button type="submit" onclick="addList()">Add</button>
 
     <br>
+     <h5>Excersize 15:</h5>
     <div>
         <label>Username:</label>
         <input type="text" id="username" placeholder="add username">
         <br>
         <button type="submit" onclick="errorHandle()">Submit</button>
     </div>
+
+    <br>
+     <h5>Excersize 11:</h5>
+    <form id ="callBackUse">
+        <label>Usrename:</label>
+        <input type="text" id="fname" placeholder="add name">
+        <br>
+         <label>Password:</label>
+        <input type="text" id="fpass" placeholder="add password">
+<br>
+<button type="submit"  >Submit</button>
+
+    </form>
+    <h5>
+        The excercise 12:
+    </h5>
+    <button id="payBtn">Payment</button>
     <script>
 
         //Exercise 1:
@@ -42,6 +67,21 @@
 
  document.write("<br>First the callstack statements executed and then setTimeout executed<br>");
  document.write("So our order of execution is call stack(statements)=>web API(setTimeout)");
+
+ 
+        //Exercise 2:
+  console.log("Other content of page is loaded");
+  setTimeout(()=>{
+            const adv = document.createElement("img");
+            adv.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl7Ckx5Eh-uxSGtH6bs1fsScG1JKJPbLk33Q&s";
+            adv.alt="the add loaded";
+            document.getElementById("adContainer").appendChild(adv);
+            console.log("Ad loaded");
+    }, 0);
+    
+    console.log("Other task added after the advertisement");
+
+  
 
          //Exercise 3:
 
@@ -58,6 +98,7 @@
 
  let jsostring = JSON.stringify(obj);
  localStorage.setItem("UserData", jsostring);
+
 
          //Exercise 5:
          let users = ["Shubhada", "Harshada" , "Anjali" , "Pranjali"];
@@ -131,6 +172,75 @@ let out = outer(11);
 
 console.log(out);
 
+// Exercise 11:
+ const user = {
+            username: "shubhada",
+            password: "12345"
+        };
+                function onSuccess() {
+            alert("Login successful!");
+            
+        }
+                  function onError() {
+            alert("Invalid username or password!");
+        }
+         function validateLogin(username, password, success, error) {
+            if(username === user.username && password === user.password) {
+                success();
+            } else {
+                error();
+            }
+        }
+          document.getElementById("callBackUse").addEventListener("submit", function(e) {
+            e.preventDefault(); 
+            const userInput = document.getElementById("fname").value;
+            const passInput = document.getElementById("fpass").value;
+
+            validateLogin(userInput, passInput, onSuccess, onError);
+        });
+
+// Exercise 12:
+ function User(callback) {
+        setTimeout(() => { 
+            const user= true; 
+            console.log("User validated");
+            if(user) {
+                callback(); 
+            } else {
+                console.log("validation failed!");
+            }
+        }, 1000);
+    }
+
+    function Payment(callback) {
+        setTimeout(() => {
+            const Success = true; 
+            console.log("Payment processed");
+            if(Success) {
+                callback(); 
+            } else {
+                console.log("failed!");
+            }
+        }, 1000);
+    }
+
+    function Invoice() {
+        setTimeout(() => {
+            console.log("Invoice generated ✅");
+            alert("Payment completed");
+        }, 1000);
+    }
+
+    document.getElementById("payBtn").addEventListener("click", function() {
+        
+        User(function() {
+            Payment(function() {
+               Invoice();
+            });
+        });
+    });
+
+
 
 //Exercise 13:
 async function fechingAPI(){
@@ -158,7 +268,7 @@ let ex13 = fechingAPI();
 
 
 
-             //Excersize 14:
+//Excersize 14:
              function addList(){
 
                 let item = document.getElementById("names").value;
