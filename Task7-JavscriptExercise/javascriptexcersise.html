@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise</title>
+</head>
+<body>
+
+    <h1>Javascript Exercise</h1>
+    <br>
+    <h5>Excersize 1:</h5>
+    <button type="submit" onclick="startfunc()">Start</button>
+    <br>
+     <h5>Excersize 2:</h5>
+    <div id="adContainer">
+     <h5>the loaded add is here:</h5>
+</div>
+    <br>
+     <h5>Excersize 9:</h5>
+    <h3>GST Calculation:</h3>
+    <button type="submit" onclick="calculateGST(3)">Calculate GST</button>
+    <br>
+    <br>
+     <h5>Excersize 14:</h5>
+    <label>Name:</label>
+    <input type="text" placeholder="add the name"  id="names">
+    <br>
+    <button type="submit" onclick="addList()">Add</button>
+
+    <br>
+     <h5>Excersize 15:</h5>
+    <div>
+        <label>Username:</label>
+        <input type="text" id="username" placeholder="add username">
+        <br>
+        <button type="submit" onclick="errorHandle()">Submit</button>
+    </div>
+
+    <br>
+     <h5>Excersize 11:</h5>
+    <form id ="callBackUse">
+        <label>Usrename:</label>
+        <input type="text" id="fname" placeholder="add name">
+        <br>
+         <label>Password:</label>
+        <input type="text" id="fpass" placeholder="add password">
+<br>
+<button type="submit"  >Submit</button>
+
+    </form>
+    <h5>
+        The excercise 12:
+    </h5>
+    <button id="payBtn">Payment</button>
+    <script>
+
+        //Exercise 1:
+ function startfunc(){
+    console.log("Start");
+    setTimeout(()=>{
+        console.log("Async Task");
+    },2000);
+     console.log("Log End");
+
+ }
+
+ document.write("<br>First the callstack statements executed and then setTimeout executed<br>");
+ document.write("So our order of execution is call stack(statements)=>web API(setTimeout)");
+
+ 
+        //Exercise 2:
+  console.log("Other content of page is loaded");
+  setTimeout(()=>{
+            const adv = document.createElement("img");
+            adv.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl7Ckx5Eh-uxSGtH6bs1fsScG1JKJPbLk33Q&s";
+            adv.alt="the add loaded";
+            document.getElementById("adContainer").appendChild(adv);
+            console.log("Ad loaded");
+    }, 0);
+    
+    console.log("Other task added after the advertisement");
+
+  
+
+         //Exercise 3:
+
+ let  arry = '{"id":101,"name":"Laptop","price":50000}';
+ var string = JSON.parse(arry);
+ console.log(typeof(string));
+ document.write("<br>The type is Objcet and the name is ", string["name"]);
+ 
+         //Exercise 4:
+
+ var obj={
+     username: "admin", role: "manager" 
+ }
+
+ let jsostring = JSON.stringify(obj);
+ localStorage.setItem("UserData", jsostring);
+
+
+         //Exercise 5:
+         let users = ["Shubhada", "Harshada" , "Anjali" , "Pranjali"];
+         users.forEach(function(user){
+            setTimeout(()=>{
+ console.log(user);
+            },3000);
+           
+
+         });
+
+         //Exercise 6 :
+
+         let productprices = [120, 300, 430, 70,40];
+         console.log("The prices of products are :",productprices);
+         let discountprices = productprices.map(price => price - (price*10)/100);
+         
+          console.log("the new prices of products after discount are:", discountprices);
+
+
+//Exercise 7:
+
+let stock=["vegetables" , "Rice" , "Soap", "Bulb" , "Lock" , "Chocolates"];
+let instack = ["Chocolates","Rice" , "Bulb"];
+var  filteredlist = stock.filter( (ingredients)=>{
+    return instack.includes(ingredients);
+    
+    
+});
+console.log(filteredlist);
+
+
+//Excercise 8:
+
+var cart = [230,45,60,79,200];
+const totalCart = cart.reduce((items , i)=> {
+   return items + i;
+});
+console.log(totalCart);
+
+ 
+//Exercise 9:
+
+
+function calculateGST(gst){
+    let product = 2400;
+let gstvalue = gst;
+console.log("the price is ",product);
+console.log("the GST is",gstvalue);
+let newPrice = product + ((gstvalue * product)/100);
+console.log("After adding gst percentage the total price of product is:",newPrice);
+
+}
+
+//Exercise 10 :
+function outer(m){
+
+    
+    console.log("Inside the outer function");
+
+    function counter(){
+            console.log("Inside the inner function");
+
+      return m = m*m ;
+    }
+    return counter(m);
+
+}
+let out = outer(11);
+
+
+console.log(out);
+
+// Exercise 11:
+ const user = {
+            username: "shubhada",
+            password: "12345"
+        };
+                function onSuccess() {
+            alert("Login successful!");
+            
+        }
+                  function onError() {
+            alert("Invalid username or password!");
+        }
+         function validateLogin(username, password, success, error) {
+            if(username === user.username && password === user.password) {
+                success();
+            } else {
+                error();
+            }
+        }
+          document.getElementById("callBackUse").addEventListener("submit", function(e) {
+            e.preventDefault(); 
+            const userInput = document.getElementById("fname").value;
+            const passInput = document.getElementById("fpass").value;
+
+            validateLogin(userInput, passInput, onSuccess, onError);
+        });
+
+// Exercise 12:
+ function User(callback) {
+        setTimeout(() => { 
+            const user= true; 
+            console.log("User validated");
+            if(user) {
+                callback(); 
+            } else {
+                console.log("validation failed!");
+            }
+        }, 1000);
+    }
+
+    function Payment(callback) {
+        setTimeout(() => {
+            const Success = true; 
+            console.log("Payment processed");
+            if(Success) {
+                callback(); 
+            } else {
+                console.log("failed!");
+            }
+        }, 1000);
+    }
+
+    function Invoice() {
+        setTimeout(() => {
+            console.log("Invoice generated ✅");
+            alert("Payment completed");
+        }, 1000);
+    }
+
+    document.getElementById("payBtn").addEventListener("click", function() {
+        
+        User(function() {
+            Payment(function() {
+               Invoice();
+            });
+        });
+    });
+
+
+
+//Exercise 13:
+async function fechingAPI(){
+
+    
+    let pro1 = new Promise(function (resolve,reject){
+   setTimeout(()=>{
+     let p =  fetch("https://jsonplaceholder.typicode.com/todos/1")
+      p.then((url) =>{
+      return url.json();
+      }).then((url2)=>{
+  console.log(url2);
+  resolve(url2);
+      });
+   },5000);
+   }
+);
+ let prom2 = await pro1;
+
+ console.log("Waiting to fullfilled promise");
+
+}      
+let ex13 = fechingAPI();
+
+
+
+
+//Excersize 14:
+             function addList(){
+
+                let item = document.getElementById("names").value;
+                
+                var addlist = document.createElement('ul');
+                           var addlistItem = document.createElement('li');
+                           addlist.appendChild(addlistItem);
+                           addlistItem.innerText= item;
+                
+
+             }
+
+  //Excersize 15:
+             function errorHandle(){
+                const input = document.getElementById("username").value;
+                if(input){
+                alert("Form Submitted");
+
+                }
+                else{
+                console.error("Error occuured :You have put empty value in form");
+
+                }
+            }
+
+
+    </script>
+</body>
+</html>

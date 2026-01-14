@@ -1,0 +1,68 @@
+
+       body {
+      display: flex;
+      justify-content: center;
+      background-color: aliceblue;
+    
+}
+.body{
+    width: 700px;
+    padding:2rem;
+    text-align: start;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 5px 10px rgb(129, 129, 129);
+    border: 1px solid black;
+    border-radius: 8px;
+}
+.certificateall{
+    display: flex;
+    flex-direction: column;
+   
+}
+.table{
+    display:flex;
+    
+      
+}
+
+
+
+th,td{
+    border:1px solid black;
+    padding:3px;
+   
+}
+th{
+    background-color: rgb(220, 247, 247);
+}
+.skill{
+    display:grid;
+    width:700px;
+  
+    grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.image{
+    float: left;
+}
+  .label-icon {
+        display: flex;
+        align-items: center;
+
+    }
+
+.contact{
+margin-bottom: 5%;
+padding-left: 32%;
+}
+.strong{
+   padding-top: 2rem;
+}
+  .foot{
+    text-align: center;
+  }
+  svg{
+    color:rgb(73, 71, 71);
+
+  }
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="body">
+
+    
+        <div class="screen">
+            <h2>Calculator</h2><hr>
+            &nbsp;
+            <div class="in">
+   <label>
+            Num 1:
+    </label>
+        <input type="number" placeholder="add num 1" id="num1">
+        
+        <br> 
+        <label>
+            Num 2 :
+        </label>
+        <input type="number" placeholder="add num 2"  id = "num2">
+</div>
+       <h4>The Result is: <span id = "result">0</span></h4>
+
+        <button onclick="Add()">+</button>
+&nbsp;&nbsp;
+<button onclick="Sub()">-</button>
+&nbsp;&nbsp;
+<button  onclick="Mul()"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" fill="black" class="bi bi-x-lg" viewBox="0 0 16 16">
+  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+</svg></button>
+&nbsp;&nbsp;
+<button  onclick="Div()">%</button>
+</div>
+
+</div> 
+</body>
+</html>

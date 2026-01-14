@@ -1,0 +1,84 @@
+
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+}
+
+.card{
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border: 2px solid black;
+    text-align: center;
+    padding: 1rem;
+    background-image: url("grretingcard.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+h3{
+    margin: 1rem 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem;
+    color: rgb(85, 148, 150);
+}
+
+pre{
+    font-size: 1rem;
+    white-space: pre-wrap;
+}
+
+h2{
+    color: rgb(7, 39, 99);
+    font-size: 1.2rem;
+}
+
+img{
+    display: block;
+    margin: 1rem auto;
+    width: 80px;
+}
+
+.year{
+    font-size: 3rem;
+    display: block;
+    margin: 0.5rem 0;
+}
+
+@media (min-width: 600px){
+    .card{
+        width: 70%;
+    }
+
+    h3{
+        font-size: 2.2rem;
+    }
+
+    .year{
+        font-size: 4rem;
+    }
+}
+
+@media (min-width: 992px){
+    .card{
+        width: 40%;
+    }
+
+    h3{
+        font-size: 2.5rem;
+    }
+
+    pre{
+        font-size: 1.1rem;
+        color:rgb(0, 0, 0)
+    }
+
+    .year{
+        font-size: 4.5rem;
+    }
+}
