@@ -11,7 +11,6 @@ Welcome to my training repository! 🚀
 - 🎉 [Greeting Card](https://lifelong-developer10.github.io/Revature_Cognizant_Training/Task4-GreetingCard/index.html)
 - 🔢 [Array Calculations](https://lifelong-developer10.github.io/Revature_Cognizant_Training/Task5-ArrayCalculations/index.html)
 - 🧮 [Calculator](https://lifelong-developer10.github.io/Revature_Cognizant_Training/Task6-Calculator/index.html)
-- ⚡ [JavaScript Exercise](https://lifelong-developer10.github.io/Revature_Cognizant_Training/Task6-Calculator/javascriptexcersise.html)
 - 🏆 [Quiz Portal](https://lifelong-developer10.github.io/Revature_Cognizant_Training/Task8-QuizzPortal/index.html)
 
 ---
