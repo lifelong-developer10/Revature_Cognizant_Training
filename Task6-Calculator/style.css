@@ -1,0 +1,70 @@
+
+        body{
+           display:flex;
+            text-align: center;
+            justify-content: center;
+            color:rgb(255, 255, 255);
+        background-image:url("https://img.freepik.com/premium-photo/directly-view-blank-adhesive-note-calculator-blue-background_1048944-25409442.jpg?semt=ais_hybrid&w=740&q=80");
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        .body{
+            
+        align-items: center;
+          border: 2px solid rgb(117, 245, 100);
+          width: 300px;
+          height: 410px;
+           margin-top:7%;
+         padding:7px;
+         border-radius:16px;
+         background-color: rgb(18, 58, 2);
+         box-shadow: 0px 5px 14px black;
+         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        button{
+            padding:4px;
+            width: 50px;
+            margin-top:10%;
+            border:2px solid rgb(255, 255, 255);
+            border-radius: 6px;
+            font-size: x-large;
+            background-color: rgb(240, 186, 11);
+            
+        }
+button:hover{
+    background-color: rgb(245, 124, 11);
+}
+        
+        input{
+            
+            padding:8px;
+            margin:7px;
+            border:2px solid rgb(240, 240, 240);
+            background-color: rgb(110, 158, 121);
+            border-radius: 5px;
+            color:rgb(0, 0, 0);
+            font-weight: bolder;
+
+        }
+        input:hover{
+            background-color: rgb(255, 255, 255);
+        }
+        h4{
+            border:2px solid rgb(250, 255, 250);
+            padding: 17px;
+            margin:1rem;
+           
+            margin-top:10%;
+            border-radius:7px;
+            background-color: rgb(0, 0, 0);
+            color:rgb(255, 255, 255);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: larger;
+            font-style: initial;
+            box-shadow: 0px 4px 2px rgb(6, 92, 17);
+        }
+       .in{
+                    margin-top:4%;
+
+       }
+    

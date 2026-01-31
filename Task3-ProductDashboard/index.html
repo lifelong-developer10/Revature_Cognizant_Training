@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Cart</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+  <div class="layout">
+    <header class="header">
+      <nav>
+        <span class="nav"><span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-amazon"
+              viewBox="0 0 16 16">
+              <path
+                d="M10.813 11.968c.157.083.36.074.5-.05l.005.005a90 90 0 0 1 1.623-1.405c.173-.143.143-.372.006-.563l-.125-.17c-.345-.465-.673-.906-.673-1.791v-3.3l.001-.335c.008-1.265.014-2.421-.933-3.305C10.404.274 9.06 0 8.03 0 6.017 0 3.77.75 3.296 3.24c-.047.264.143.404.316.443l2.054.22c.19-.009.33-.196.366-.387.176-.857.896-1.271 1.703-1.271.435 0 .929.16 1.188.55.264.39.26.91.257 1.376v.432q-.3.033-.621.065c-1.113.114-2.397.246-3.36.67C3.873 5.91 2.94 7.08 2.94 8.798c0 2.2 1.387 3.298 3.168 3.298 1.506 0 2.328-.354 3.489-1.54l.167.246c.274.405.456.675 1.047 1.166ZM6.03 8.431C6.03 6.627 7.647 6.3 9.177 6.3v.57c.001.776.002 1.434-.396 2.133-.336.595-.87.961-1.465.961-.812 0-1.286-.619-1.286-1.533M.435 12.174c2.629 1.603 6.698 4.084 13.183.997.28-.116.475.078.199.431C13.538 13.96 11.312 16 7.57 16 3.832 16 .968 13.446.094 12.386c-.24-.275.036-.4.199-.299z" />
+              <path
+                d="M13.828 11.943c.567-.07 1.468-.027 1.645.204.135.176-.004.966-.233 1.533-.23.563-.572.961-.762 1.115s-.333.094-.23-.137c.105-.23.684-1.663.455-1.963-.213-.278-1.177-.177-1.625-.13l-.09.009q-.142.013-.233.024c-.193.021-.245.027-.274-.032-.074-.209.779-.556 1.347-.623" />
+            </svg> </span>Home</span>
+        <span class="nav">About Us</span>
+        <span class="nav">Products</span>
+        <span class="nav">Register</span>
+        <span><input type="text" placeholder="Search.."> Search <svg xmlns="http://www.w3.org/2000/svg" width="18"
+            height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg> </span>
+      </nav>
+    </header>
+    <aside class="sidebar">
+      <img
+        src="https://img.freepik.com/premium-vector/young-man-avatar-character-due-avatar-man-vector-icon-cartoon-illustration_1186924-4438.jpg?semt=ais_hybrid&w=740&q=80"
+        alt="profile" height="200px" width="200px">
+      <h3> Shubhada Shingate</h3>
+      <hr>
+      <table>
+        <tr>
+          <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-bag-check-fill"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z" />
+            </svg> Total Orders:</th>
+          <td>3</td>
+
+        </tr>
+        <tr>
+          <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-box-seam-fill"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003zM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461z" />
+            </svg> Delivered :</th>
+          <td> 1</td>
+        </tr>
+        <tr>
+          <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" class="bi bi-gear-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+            </svg> Settings </th>
+
+
+        </tr>
+        <tr>
+          <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-box-arrow-left"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+              <path fill-rule="evenodd"
+                d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+            </svg> LogOut</th>
+          <td></td>
+        </tr>
+        <div class="cart">
+          <button type="submit" class="cartbutton">Cart<span><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                height="16" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+                <path
+                  d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708" />
+              </svg></span></button>
+        </div>
+      </table>
+    </aside>
+    <main class="content">
+      <div>
+        <div class="container">
+          <div class="item"><br>
+            <img
+              src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQXetfKgZFjH3dOrAVnp8rJiG-QfeSqVT9PtIs4TfBxPPGj3BoKQmTsChMIVGfz5ntZcCNNAPaknJXYqde5xgXO-0y0pUZV92VTMcveqk4u "
+              height="150px" width="150px">
+            <span>POCO C71</span>
+            <ul>
+
+              <li>64GB Storage</li>
+              <li> 4GB Ram</li>
+              <li>Desert Gold Smartphone</li>
+              </li>
+            </ul>
+            <button type="submit">Add To Cart</button>
+          </div>
+          <div class="item2"><br>
+            <img
+              src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRZ1iV96yGFINhxHZmn0ISt3w17UQaZyIwiwf89ZOEmEpfIib4BgrIiH54CDqRWasCoxEgZ8I4kYZxl6cuFoNaXFWISPW8QeQD5Vy46eTWffGVcpRkr-J4EmA "
+              height="150px" width="150px">
+            <span>Galaxy AO6</span>
+            <ul>
+
+              <li>64GB Storage</li>
+              <li> 4GB Ram</li>
+              <li>Desert Gold Smartphone</li>
+              </li>
+            </ul>
+            <button type="submit">Add To Cart</button>
+          </div>
+          <div class="item4"><br>
+            <img
+              src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTxbo8UwS7uhQ0B-Yr1xsjUUAw_ULsuYu3qoxzmgoO7Y8A7Id8mK4twzsPnQ48SOQsTz5TpAKosVp869rZvqYqy8QhNU_80FDlrT-roVlTlsJNZK7JKbOJL"
+              height="150px" width="150px">
+            <span>iPhone 16e</span>
+            <ul>
+
+              <li>64GB Storage</li>
+              <li> 4GB Ram</li>
+              <li>Desert Gold Smartphone</li>
+              </li>
+            </ul>
+            <button type="submit">Add To Cart</button>
+          </div>
+          <div class="item"><br>
+            <img
+              src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRmX3yDteVxje33-J5HblUy57Wm-ZMb4uZdzmYysvVy7_bidc1ne2ShObNN37t5zvpKxIwMXnQETidNz1YuVmpcQLptFbGwntMsFAvBbB5nMygyaChjZ3j-ww"
+              height="150px" width="150px">
+            <span>Oneplus Nord 5 </span>
+            <ul>
+
+              <li>64GB Storage</li>
+              <li> 4GB Ram</li>
+              <li>Desert Gold Smartphone</li>
+              </li>
+            </ul>
+            <button type="submit">Add To Cart</button>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="productcontainer">
+          <div class="col1">
+            <img
+              src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRmX3yDteVxje33-J5HblUy57Wm-ZMb4uZdzmYysvVy7_bidc1ne2ShObNN37t5zvpKxIwMXnQETidNz1YuVmpcQLptFbGwntMsFAvBbB5nMygyaChjZ3j-ww"
+              height="150px" width="150px">
+            <br> <span>Oppo K13 5G </span>
+            <ul>
+
+              <li>64GB Storage</li>
+              <li> 4GB Ram</li>
+              <li>Desert Gold Smartphone</li>
+              </li>
+            </ul>
+            <button type="submit">Add To Cart</button>
+          </div>
+          <div class="col1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSquhUA9LyAcI5veBDtJZo4La8YsyzdvAQBJw&s"
+              height="150px" width="150px">
+            <br> <span>Vivo V60e 5G</span>
+            <ul>
+
+              <li>64GB Storage</li>
+              <li> 4GB Ram</li>
+              <li>Desert Gold Smartphone</li>
+              </li>
+            </ul>
+            <button type="submit">Add To Cart</button>
+          </div>
+          <div class="col1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo-9igLrQ-8PJWDAvPlS0IpvTTzROEIE7Xtg&s"
+              height="150px" width="150px">
+            <br> <span>Motorola G45 5G </span>
+            <ul>
+
+              <li>64GB Storage</li>
+              <li> 4GB Ram</li>
+              <li>Desert Gold Smartphone</li>
+              </li>
+            </ul>
+            <button type="submit">Add To Cart</button>
+          </div>
+          <div class="col1">
+            <img src="https://blogassets.airtel.in/wp-content/uploads/2024/10/2100184_P6YTO90-1.jpg" height="150px"
+              width="150px">
+            <br><strong><span>Vivo T4 Lite 5G </span></strong>
+            <ul>
+
+              <li>64GB Storage</li>
+              <li> 4GB Ram</li>
+              <li>Desert Gold Smartphone</li>
+              </li>
+            </ul>
+            <button type="submit">Add To Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <footer class="footer">
+      <p>© 2025 Terms and Conditions Apply. All rights reserved.</p>
+      <div class="footer-section">
+        <p>Some address in the India office location</p>
+        <p>Email:123@gmail.com</p>
+        <p>Phone:+91 1234567897</p>
+
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
